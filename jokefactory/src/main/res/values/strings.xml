@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JokeFactory</string>
+    <string name="find_joke">Dig, we need find the joke!</string>
 </resources>
