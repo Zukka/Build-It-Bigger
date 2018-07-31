@@ -42,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view){
-        Joker joker = new Joker();
+     /*   Joker joker = new Joker();
         // Create Intent to launch JokeFactory Activity
 
         Intent intent = new Intent(this, DisplayJokeActivity.class);
         intent.putExtra(AppConstants.Joke, joker.tellJoke());
         startActivity(intent);
+        */
+        new EndpointAsyncTask().execute(this);
     }
 }

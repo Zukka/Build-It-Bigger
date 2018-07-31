@@ -14,7 +14,6 @@ buildscript {
 repositories {
     jcenter()
 }
-
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'com.google.cloud.tools.appengine'
@@ -30,4 +29,15 @@ dependencies {
     implementation 'javax.servlet:servlet-api:2.5'
     implementation 'com.google.api-client:google-api-client:1.23.0'
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
+    compile project(path: ':lib')
+}
+appengine {  // App Engine tasks configuration
+    deploy {
+        project = findProperty("appengine.deploy.project")
+        version = findProperty("appengine.deploy.version")
+        def promoteProp = findProperty("appengine.deploy.promote")
+        if (promoteProp != null) {
+            promote = new Boolean(promoteProp)
+        }
+    }
 }
