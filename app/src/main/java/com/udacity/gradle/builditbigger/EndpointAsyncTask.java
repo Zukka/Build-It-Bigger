@@ -14,13 +14,18 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
-class EndpointAsyncTask extends AsyncTask<Void, Void, String> {
+public class EndpointAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi myApiService = null;
     private Context mContext;
 
     public EndpointAsyncTask (Context context){
         mContext = context;
     }
+
+    public EndpointAsyncTask() {
+
+    }
+
     @Override
     protected String doInBackground(Void... params) {
         if(myApiService == null) {

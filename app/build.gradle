@@ -37,10 +37,23 @@ android {
             exclude module: 'httpclient'
         }
     }
+    flavorDimensions "tier"
+    productFlavors {
+        free {
+            applicationId "com.udacity.gradle.builditbigger.free"
+            versionName "1.0­free"
+        }
+
+        paid {
+            applicationId "com.udacity.gradle.builditbigger.paid"
+            versionName "1.0­paid"
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.google.android.gms:play-services-ads:15.0.1'
