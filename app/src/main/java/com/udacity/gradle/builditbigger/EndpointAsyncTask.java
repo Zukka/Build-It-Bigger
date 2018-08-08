@@ -54,7 +54,7 @@ public class EndpointAsyncTask extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String result) {
         Intent intent = new Intent(mContext, DisplayJokeActivity.class);
 
-        intent.putExtra("JOKE_KEY", result);
+        intent.putExtra(AppConstants.Joke, result);
         mContext.startActivity(intent);
     }
 
